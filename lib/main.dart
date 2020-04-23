@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
     var questions = [
       {'questionText': 'What\'s your favorite color?','answers':['Black','Blue','Red'],},
       {'questionText': 'What\'s your favorite animal?','answers':['Cat','Dog','Lion'],},
-      {'questionText': 'What\'s your favorite place?','answers':['India','France','UK'],},
+      {'questionText': 'What\'s your favorite place?','answers':['India','US','UK'],},
     ];
     return MaterialApp(
       home: Scaffold(
