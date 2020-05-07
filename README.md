@@ -1,6 +1,6 @@
 # flutter_first_app
 
-A new Flutter project.
+Its a quizz app developed on flutter framework.
 
 ## Getting Started
 
