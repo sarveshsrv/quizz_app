@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
               )
             : Center(
                 child: RaisedButton(
-                  color: Colors.indigo[400],
+                  color: Colors.redAccent,
                   textColor: Colors.white,
                   child: Text("No more questions!"),
                   onPressed: null,
