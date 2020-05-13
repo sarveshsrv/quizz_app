@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     },
     {
       'questionText': 'What\'s your favorite place?',
-      'answers': ['India', 'France', 'Italy', 'Budapest'],
+      'answers': ['India', 'France', 'Ireland', 'Budapest'],
     },
   ];
 
