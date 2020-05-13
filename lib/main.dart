@@ -46,6 +46,8 @@ class _MyAppState extends State<MyApp> {
     print(_questionIndex);
     if (_questionIndex < questions.length) {
       print("We have more questions");
+    } else {
+      print("You are done.");
     }
   }
 
@@ -61,17 +63,27 @@ class _MyAppState extends State<MyApp> {
             title: Center(
           child: Text('My First App'),
         )),
-        body: Column(
-          children: [
-            Question(
-              questions[_questionIndex]['questionText'],
-            ),
-            ...(questions[_questionIndex]['answers'] as List<String>)
-                .map((answer) {
-              return Answer(_answerQuestion, answer);
-            }).toList()
-          ],
-        ),
+        body: _questionIndex < questions.length
+            ? Column(
+                //Using ternary operator
+                children: [
+                  Question(
+                    questions[_questionIndex]['questionText'],
+                  ),
+                  ...(questions[_questionIndex]['answers'] as List<String>)
+                      .map((answer) {
+                    return Answer(_answerQuestion, answer);
+                  }).toList()
+                ],
+              )
+            : Center(
+                child: RaisedButton(
+                  color: Colors.indigo[400],
+                  textColor: Colors.white,
+                  child: Text("No more questions!"),
+                  onPressed: null,
+                ),
+              ),
       ),
     );
   }
