@@ -39,15 +39,24 @@ class _MyAppState extends State<MyApp> {
         'answers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
       },
       {
-        'questionText': 'Who\'s your favorite instructor?',
-        'answers': ['Max', 'Max', 'Max', 'Max'],
+        'questionText': 'Who\'s your favorite cricketer?',
+        'answers': ['Kohli', 'Tendulkar', 'Dhoni', 'Ganguly'],
+      },
+      {
+        'questionText': 'What\'s your favorite place?',
+        'answers': ['India', 'France', 'Italy', 'Budapest'],
       },
     ];
+    /*var sr = ['Sarvesh'];
+    sr.add('Tiwari');
+    print(sr);*/
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My First App'),
-        ),
+            title: Center(
+          child: Text('My First App'),
+        )),
         body: Column(
           children: [
             Question(
