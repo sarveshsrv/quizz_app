@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
                 child: RaisedButton(
                   color: Colors.redAccent,
                   textColor: Colors.white,
-                  child: Text("You did it!"),
+                  child: Text("You did it.No more questions!"),
                   onPressed:(){},
                 ),
               ),
