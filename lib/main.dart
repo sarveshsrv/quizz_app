@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-
-import './question.dart';
+import 'package:flutter_first_app/question.dart';
 import './answer.dart';
+//import './question.dart';
+
 
 // void main() {
 //   runApp(MyApp());
@@ -80,11 +81,14 @@ class _MyAppState extends State<MyApp> {
                 child: RaisedButton(
                   color: Colors.redAccent,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0)
-                  ),
+                      borderRadius: BorderRadius.circular(50.0)),
+               //   constraints: BoxConstraints.tightFor(width: 100, height: 50),
                   textColor: Colors.white,
-                  child: Text("You did it!", style: TextStyle(fontWeight: FontWeight.bold),),
-                  onPressed:(){},
+                  child: Text(
+                    "You did it!",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  onPressed: () {},
                 ),
               ),
       ),
