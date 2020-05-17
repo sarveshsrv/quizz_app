@@ -82,7 +82,7 @@ class _MyAppState extends State<MyApp> {
                   color: Colors.redAccent,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.0)),
-               //   constraints: BoxConstraints.tightFor(width: 100, height: 50),
+               
                   textColor: Colors.white,
                   child: Text(
                     "You did it!",
