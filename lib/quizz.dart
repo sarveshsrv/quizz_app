@@ -1,25 +1,30 @@
-class Quizz  extends StatelessWidget {
-  final List<map<String, Object>> questions;
+import 'package:flutter/material.dart';
+
+import './question.dart';
+import './answer.dart';
+
+class Quiz extends StatelessWidget {
+  final List<Map<String, Object>> questions;
   final int questionIndex;
   final Function answerQuestion;
-  Quizz({
-    @required this.questions;
-    @required this.answerQuestion;
-    @required this.questionIndex;
+
+  Quiz({
+    @required this.questions,
+    @required this.answerQuestion,
+    @required this.questionIndex,
   });
+
   @override
   Widget build(BuildContext context) {
     return Column(
-              
-                children: [
-                  Question(
-                    questions[questionIndex]['questionText'],
-                  ),
-                  ...(questions[_questionIndex]['answers'] as List<String>)
-                      .map((answer) {
-                    return Answer(_answerQuestion, answer);
-                  }).toList()
-                ],
-              );
+      children: [
+        Question(
+          questions[questionIndex]['questionText'],
+        ),
+        ...(questions[questionIndex]['answers'] as List<String>).map((answer) {
+          return Answer(answerQuestion, answer);
+        }).toList()
+      ],
+    );
   }
 }
