@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_first_app/question.dart';
-import './answer.dart';
-//import './question.dart';
 
-
+import './quizz.dart';
+import './result.dart';
 // void main() {
 //   runApp(MyApp());
 // }
@@ -19,9 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var _questionIndex = 0;
-  final questions = const [
-    //var questions
+  final _questions = const [
     {
       'questionText': 'What\'s your favorite color?',
       'answers': ['Black', 'Red', 'Green', 'White'],
@@ -31,66 +27,47 @@ class _MyAppState extends State<MyApp> {
       'answers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
     },
     {
-      'questionText': 'Who\'s your favorite cricketer?',
-      'answers': ['Kohli', 'Tendulkar', 'Dhoni', 'Ganguly'],
-    },
-    {
-      'questionText': 'What\'s your favorite place?',
-      'answers': ['India', 'France', 'Ireland', 'Budapest'],
+      'questionText': 'Who\'s your favorite instructor?',
+      'answers': ['Max', 'Max', 'Max', 'Max'],
     },
   ];
+  var _questionIndex = 0;
 
   void _answerQuestion() {
+    // var aBool = true;
+    // aBool = false;
+
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
     print(_questionIndex);
-    if (_questionIndex < questions.length) {
-      print("We have more questions");
+    if (_questionIndex < _questions.length) {
+      print('We have more questions!');
     } else {
-      print("You are done.");
+      print('No more questions!');
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    /*var sr = ['Sarvesh'];
-    sr.add('Tiwari');
-    print(sr);*/
+    // var dummy = const ['Hello'];
+    // dummy.add('Max');
+    // print(dummy);
+    // dummy = [];
+    // questions = []; // does not work if questions is a const
 
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-            title: Center(
-          child: Text('My First App'),
-        )),
-        body: _questionIndex < questions.length
-            ? Column(
-                //Using ternary operator
-                children: [
-                  Question(
-                    questions[_questionIndex]['questionText'],
-                  ),
-                  ...(questions[_questionIndex]['answers'] as List<String>)
-                      .map((answer) {
-                    return Answer(_answerQuestion, answer);
-                  }).toList()
-                ],
+          title: Center(child: Text('My First App'),)
+        ),
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions,
               )
-            : Center(
-                child: RaisedButton(
-                  color: Colors.redAccent,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0)),
-               
-                  textColor: Colors.white,
-                  child: Text(
-                    "You did it!",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  onPressed: () {},
-                ),
-              ),
+            : Result(),
       ),
     );
   }
