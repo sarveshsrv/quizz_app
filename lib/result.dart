@@ -36,7 +36,7 @@ class Result extends StatelessWidget {
         textColor: Colors.white,
         child: Text(
           'Restart Quiz!',
-          style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
         onPressed: resetHandler,
       ),
