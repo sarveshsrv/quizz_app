@@ -11,14 +11,31 @@ void main() => runApp(MyApp());
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _MyAppState();
   }
 }
 
 class _MyAppState extends State<MyApp> {
   final _questions = const [
-     {
+    {
+      'questionText': 'What\'s your favorite color?',
+      'answers': [
+        {'text': 'Black', 'score': 10},
+        {'text': 'Red', 'score': 5},
+        {'text': 'Green', 'score': 3},
+        {'text': 'White', 'score': 1},
+      ],
+    },
+    {
+      'questionText': 'What\'s your favorite place?',
+      'answers': [
+        {'text': 'Kashmir', 'score': 10},
+        {'text': 'Paris', 'score': 5},
+        {'text': 'Budapest', 'score': 3},
+        {'text': 'Rome', 'score': 1},
+      ],
+    },
+    {
       'questionText': 'What\'s your favorite color?',
       'answers': [
         {'text': 'Black', 'score': 10},
@@ -36,7 +53,6 @@ class _MyAppState extends State<MyApp> {
         {'text': 'Lion', 'score': 9},
       ],
     },
-
     {
       'questionText': 'Who\'s your favorite instructor?',
       'answers': [
@@ -50,7 +66,7 @@ class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
   var _totalScore = 0;
 
-   void _resetQuiz() {
+  void _resetQuiz() {
     setState(() {
       _questionIndex = 0;
       _totalScore = 0;
@@ -60,7 +76,7 @@ class _MyAppState extends State<MyApp> {
   void _answerQuestion(int score) {
     // var aBool = true;
     // aBool = false;
-     _totalScore += score;
+    _totalScore += score;
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
@@ -82,10 +98,15 @@ class _MyAppState extends State<MyApp> {
 
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.yellow[200],
         appBar: AppBar(
+            backgroundColor: Colors.teal[500],
             title: Center(
-          child: Text('My First App'),
-        )),
+              child: Text(
+                'CheckMate',
+              ),
+            )),
+          
         body: _questionIndex < _questions.length
             ? Quiz(
                 answerQuestion: _answerQuestion,
