@@ -33,16 +33,7 @@ class _MyAppState extends State<MyApp> {
         {'text': 'Paris', 'score': 5},
         {'text': 'Budapest', 'score': 3},
         {'text': 'Rome', 'score': 1},
-      ],
-    },
-    {
-      'questionText': 'What\'s your favorite color?',
-      'answers': [
-        {'text': 'Black', 'score': 10},
-        {'text': 'Red', 'score': 5},
-        {'text': 'Green', 'score': 3},
-        {'text': 'White', 'score': 1},
-      ],
+      ],  
     },
     {
       'questionText': 'What\'s your favorite animal?',
@@ -106,7 +97,6 @@ class _MyAppState extends State<MyApp> {
                 'CheckMate',
               ),
             )),
-          
         body: _questionIndex < _questions.length
             ? Quiz(
                 answerQuestion: _answerQuestion,
