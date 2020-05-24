@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
         {'text': 'Paris', 'score': 5},
         {'text': 'Budapest', 'score': 3},
         {'text': 'Rome', 'score': 1},
-      ],  
+      ],
     },
     {
       'questionText': 'What\'s your favorite animal?',
