@@ -8,9 +8,9 @@ class Result extends StatelessWidget {
 
   String get resultPhrase {
     String resultText;
-    if (resultScore <= 10) {
+    if (resultScore <= 18) {
       resultText = "You are nice and innocent!";
-    } else if (resultScore > 10 && resultScore <= 15) {
+    } else if (resultScore > 18 && resultScore <= 25) {
       resultText = "You are pretty likeable!";
     } else {
       resultText = "You are bad!";
@@ -46,7 +46,7 @@ class Result extends StatelessWidget {
   }
 }
 
-///Myt code
+///My code
  /* return Center(
       child: RaisedButton(
         color: Colors.redAccent,
