@@ -93,7 +93,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Colors.yellow[200],
         appBar: AppBar(
-            backgroundColor: Colors.teal[500],
+            backgroundColor: Colors.brown[900],
             title: Center(
               child: Text(
                 'CheckMate',
